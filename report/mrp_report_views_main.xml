@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+        <report 
+            string="Production Order" 
+            id="action_report_production_order_inherit" 
+            model="mrp.production" 
+            name="mrp.report_mrporder"
+            file="zh_mrp.report.mrp_production_templates" 
+            report_type="qweb-pdf"
+        />
+
+    </data>
+</odoo>

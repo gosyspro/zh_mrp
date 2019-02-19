@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="view_mrp_excel_wizard" model="ir.ui.view">
+		<field name="name">Lanceur</field>
+		<field name="model">zh.mrp.wizard</field>
+		<field name="arch" type="xml">
+			<form string="Lanceur">
+                    <script>
+                            $(document).ready(function(){
+                            $('.modal-content').css({'width': '680px'});
+                            $('.modal-content').css({'MAXwidth': '550px'});
+                            });
+                    </script>			
+				<field name="mrp_wz_state" invisible="1" />
+				<group attrs="{'invisible': [('mrp_wz_state','=','done')]}">
+					<field name="mrp_wz_order_id" options="{'no_open':True,'no_create':True}" style="width:200px;" />
+				</group>
+				<group attrs="{'invisible': [('mrp_wz_state','=','new')]}">
+						<field name="mrp_wz_worksheetname" invisible="1"/>	
+                        <field name="mrp_wz_worksheet" readonly="1"  filename="mrp_wz_worksheetname"/>
+				</group>
+				<footer>
+					<button name="mrp_wizard_generer_fiches_xslx" string="Générer fiches"
+						colspan="1" type="object" class="btn-primary"
+						attrs="{'invisible': [('mrp_wz_state','=','done')]}" />
+					<button string="Annuler" class="btn-default" special="cancel" />
+				</footer>
+			</form>
+		</field>
+	</record>
+
+	<record id="action_mrp_excel_wizard" model="ir.actions.act_window">
+		<field name="name">Lanceur</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="res_model">zh.mrp.wizard</field>
+		<field name="view_type">form</field>
+		<field name="view_mode">form</field>
+		<field name="target">new</field>
+	</record>
+
+</odoo>    

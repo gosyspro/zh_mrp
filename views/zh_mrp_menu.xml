@@ -1,0 +1,16 @@
+<odoo>
+  <data>
+        <menuitem id="menu_mrp_ficheop"
+              name="Fiche Opérations"
+              parent="mrp.menu_mrp_reporting"
+              sequence="1" action="zh_mrp.action_mrp_excel_wizard"/>
+        <menuitem id="menu_mrp_ficheop"
+              name="Fiche Traçabilité composants"
+              parent="mrp.menu_mrp_reporting"
+              sequence="2" action="zh_mrp.action_mrp_excel_wizard"/>
+        <menuitem id="menu_mrp_ficheop"
+              name="Fiche Contrôle"
+              parent="mrp.menu_mrp_reporting"
+              sequence="3" action="zh_mrp.action_mrp_excel_wizard"/>                            
+  </data>
+</odoo>
